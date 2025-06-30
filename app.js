@@ -110,7 +110,7 @@ app.post('/favorites', async (req, res) => {
 
 (async () => {
   try {
-    await mongoose.connect('mongodb://localhost:27017/pokemon_registry', {
+    await mongoose.connect(`mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_USERNAME}@mongodb:27017/pokemon_registry?authsource=admin`, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
